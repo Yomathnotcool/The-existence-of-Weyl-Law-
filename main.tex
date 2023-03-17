@@ -1,0 +1,98 @@
+\documentclass[12pt,a4paper,english]{article}
+\usepackage{mathtools}
+\usepackage{mathabx} 
+\usepackage[a4paper]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[OT2,T1]{fontenc}
+\usepackage{tcolorbox}
+\usepackage[keeplastbox]{flushend}
+\usepackage{color}
+\usepackage{tikz-cd}
+\usepackage{appendix}
+\usepackage{babel}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{stmaryrd}
+\usepackage{color}
+\usepackage{array}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{natbib}
+\usepackage[bb=boondox]{mathalfa}
+\geometry{top=3cm,bottom=3cm,left=2.5cm,right=2.5cm}
+\setlength\parindent{0pt}
+\renewcommand{\baselinestretch}{1.3}
+
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+  \left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+  #1 % the function
+  \vphantom{\big|} % pretend it's a little taller at normal size
+  \right|_{#2} % this is the delimiter
+  }}
+  
+% definition of the "structure"
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{coro}[thm]{Corollary}
+\newtheorem{claim}{Claim}
+
+
+\theoremstyle{definition}
+\newtheorem{conj}{Conjecture}
+\newtheorem{defi}{Definition}
+\newtheorem*{example}{Example}
+\newtheorem{exercise}{\textbf{\textcolor{red}{Exercise}}}
+\newtheorem{step}{Step}
+
+\theoremstyle{remark}
+
+\newtheorem*{rem}{Remark}
+
+% define new control sequence
+\newcommand{\homo}{\mathbf{Hom}}
+\newcommand{\Max}{\mathbf{Max}}
+\newcommand{\spec}{\mathbf{Spec}}
+\newcommand{\spm}{\mathbf{Spec}_{max}}
+\newcommand{\Frac}{\mathbf{Frac}}
+\newcommand{\tr}{\mathrm{tr}}
+\newcommand{\codim}{\mathrm{codim}}
+\newcommand{\dif}{\text{d}}
+\newcommand{\jac}{\textbf{Jac}}
+\newcommand{\der}{\textbf{Der}}
+\newcommand{\rank}{\text{rank}}
+\newcommand{\sym}{\textbf{Sym}}
+\title{Wely Law}
+\date{\today}
+\author{Deng Zhiyuan\footnote{Email:\ \href{mailto:dengzymathnt@outlook.com}{dengzymathnt@outlook.com}}}
+
+
+\begin{document}
+\maketitle
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+Based on the proposition 1 in \cite{hoffmann1991cuspidal}, we know that if the spectrum of Laplacian on $M=\Tilde{\Gamma}\backslash\mathbb{R}\times\mathbb{H}$ is linearly bounded by a monotone function $\mu(n)$, then the corresponding value of twist character $\chi$ fails with Diophantine approximation.  So on the opposite way, there should be a criterion parameter based on the given twist character, if the parameter satisfies the Diophantine approximation condition, then the Wely's law could fail. The goal of this paper is to consider the existence of Wely's law based the twist character $\chi$.
+
+\section{Idea}
+
+From \cite{finis2021remainder}, there is a fine error term for Wely's law, which is proven by Selberg trace formula with Hecke operators. From the proof of this, we should be able to find a optimal close monotone function that grows linearly to estimate the spectrum. Then this estimation should give us the Diophantine condition we want. But the problem so far is the Maass form on $M$ which is twisted by $\chi$. And because of this extra twist character, the definition of Hecke operators on the twisted hyperbolic surface becomes unknown?
+
+But ignore those technical questions, the biggest guess here is associated to the twisted character, it has to contain more information than just a twist but what is it?
+
+\section{statement}
+\begin{prop}
+Let $N_{\Delta_{M}}$ be the number of eigenvalues, counted with multiplicity, of the Laplacian $\Delta$ of $M$ less than $\lambda$.   
+\end{prop}
+\newpage
+\bibliographystyle{plain}
+\bibliography{bib.bib}
+
+\end{document}

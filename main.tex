@@ -81,15 +81,17 @@
 \section{Introduction}
 Based on the proposition 1 in \cite{hoffmann1991cuspidal}, we know that if the spectrum of Laplacian on $M=\Tilde{\Gamma}\backslash\mathbb{R}\times\mathbb{H}$ is linearly bounded by a monotone function $\mu(n)$, then the corresponding value of twist character $\chi$ fails with Diophantine approximation.  So on the opposite way, there should be a criterion parameter based on the given twist character, if the parameter satisfies the Diophantine approximation condition, then the Wely's law could fail. The goal of this paper is to consider the existence of Wely's law based the twist character $\chi$.
 
-\section{Idea}
-
-From \cite{finis2021remainder}, there is a fine error term for Wely's law, which is proven by Selberg trace formula with Hecke operators. From the proof of this, we should be able to find a optimal close monotone function that grows linearly to estimate the spectrum. Then this estimation should give us the Diophantine condition we want. But the problem so far is the Maass form on $M$ which is twisted by $\chi$. And because of this extra twist character, the definition of Hecke operators on the twisted hyperbolic surface becomes unknown?
-
-But ignore those technical questions, the biggest guess here is associated to the twisted character, it has to contain more information than just a twist but what is it? 
-
-Similar result from \cite{khosravi2005remainder}, he took care of the error term on the Heisenberg manifold (which is same as the counter example given in \cite{hoffmann1991cuspidal}?), but still their ideas kept that given a nice "failure" of Diophantine approximation, then there should be a nice error term for Wely's law. 
-
-Is it possible to do the oppositite direction? 
+\section{The group structure} 
+Given $\Gamma$ as the Fuchsian group, which is a discrete subgroup of $\textbf{PSL}(2,\mathbb{R})$, 
+\begin{prop}
+    A subgroup of $\textbf{PSL}(2,\mathbb{R})$ acts properly discoutinuously on $\mathbb{H}$ if and only if $\Gamma$ is a Fuchsian group.
+\end{prop}
+\begin{defi}
+    A fundamental domain $\mathcal{F}\subset \mathbb{H}$ for Fuchsian group $\Gamma$ is a closed set such that 
+    \begin{equation*}
+        \Gamma\mathcal{F}:=\bigcup_{T\in\Gamma}T\mathcal{F}=\mathbb{H}
+    \end{equation*}
+\end{defi}
 
 \section{statement}
 \begin{prop}

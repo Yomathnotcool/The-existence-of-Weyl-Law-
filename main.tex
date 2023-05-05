@@ -1,11 +1,11 @@
 \documentclass[12pt,a4paper,english]{article}
 \usepackage{mathtools}
-\usepackage{mathabx} 
+ 
 \usepackage[a4paper]{geometry}
 \usepackage[utf8]{inputenc}
-\usepackage[OT2,T1]{fontenc}
+
 \usepackage{tcolorbox}
-\usepackage[keeplastbox]{flushend}
+
 \usepackage{color}
 \usepackage{tikz-cd}
 \usepackage{appendix}
@@ -78,10 +78,11 @@
 \tableofcontents
 \newpage
 
-\section{Introduction}
+\section{Trace formula}
+
 Based on the proposition 1 in \cite{hoffmann1991cuspidal}, we know that if the spectrum of Laplacian on $M=\Tilde{\Gamma}\backslash\mathbb{R}\times\mathbb{H}$ is linearly bounded by a monotone function $\mu(n)$, then the corresponding value of twist character $\chi$ fails with Diophantine approximation.  So on the opposite way, there should be a criterion parameter based on the given twist character, if the parameter satisfies the Diophantine approximation condition, then the Wely's law could fail. The goal of this paper is to consider the existence of Wely's law based the twist character $\chi$.
 
-\section{The group structure} 
+\subsection{The group structure} 
 Given $\Gamma$ as the Fuchsian group, which is a discrete subgroup of $\textbf{PSL}(2,\mathbb{R})$, 
 \begin{prop}
     A subgroup of $\textbf{PSL}(2,\mathbb{R})$ acts properly discoutinuously on $\mathbb{H}$ if and only if $\Gamma$ is a Fuchsian group.
@@ -93,10 +94,18 @@ Given $\Gamma$ as the Fuchsian group, which is a discrete subgroup of $\textbf{P
     \end{equation*}
 \end{defi}
 
-\section{statement}
+\subsection{statement}
 \begin{prop}
 Let $N_{\Delta_{M}}$ be the number of eigenvalues, counted with multiplicity, of the Laplacian $\Delta$ of $M$ less than $\lambda$.   
 \end{prop}
+
+\section{Ergodic point of view}
+
+\begin{thm}\label{geodesictoconjugacy}
+   The geometric interpretation of the trace formula shows a one-to-one correspondence between the closed and oriented geodesics of the surface $S=\Gamma\backslash \mathbb{H}$ and the conjugacy classes within $\Gamma$. To be more precise, the length of any geodesic correlates to the translation length of its corresponding conjugacy class ${T}$. 
+\end{thm}
+
+The significance of geodesic flow on modular surfaces can be directly seen through Theorem \ref{geodesictoconjugacy}. Considering Wely's law as discussed above, the spectrum side is illy exploded. So it's reasonable to expect that the geodesic flow on the space $\Tilde{\Gamma}\backslash \mathbb{H}\times \mathbb{R}$.
 \newpage
 \bibliographystyle{plain}
 \bibliography{bib.bib}

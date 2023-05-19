@@ -40,7 +40,7 @@
 \newtheorem{prop}[thm]{Proposition}
 \newtheorem{coro}[thm]{Corollary}
 \newtheorem{claim}{Claim}
-
+\newtheorem{rmk}{Remark}
 
 \theoremstyle{definition}
 \newtheorem{conj}{Conjecture}
@@ -61,11 +61,14 @@
 \newcommand{\Frac}{\mathbf{Frac}}
 \newcommand{\tr}{\mathrm{tr}}
 \newcommand{\codim}{\mathrm{codim}}
-\newcommand{\dif}{\text{d}}
+\newcommand{\dd}{\text{d}}
 \newcommand{\jac}{\textbf{Jac}}
 \newcommand{\der}{\textbf{Der}}
 \newcommand{\rank}{\text{rank}}
 \newcommand{\sym}{\textbf{Sym}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\HH}{\mathbb{H}}
+\newcommand{\ZZ}{\mathbb{Z}}
 \title{Wely Law}
 \date{\today}
 \author{Deng Zhiyuan\footnote{Email:\ \href{mailto:dengzymathnt@outlook.com}{dengzymathnt@outlook.com}}}
@@ -80,47 +83,107 @@
 
 \section{Trace formula}
 
-According to Proposition 1 in \cite{hoffmann1991cuspidal}, if the spectrum of Laplacian on $M=\tilde{\Gamma}\backslash\mathbb{R}\times\mathbb{H}$ is linearly bounded by a monotone function $\mu(n)$, then the corresponding values of the twist character $\chi$ are incompatible with Diophantine approximation. Hence, conversely, a parameter criterion based on the given twist character can be established. The purpose of this paper is to examine the existence of Weyl's law based on the twist character $\chi$.
+According to Proposition 1 in \cite{hoffmann1991cuspidal}, if the spectrum of Laplacian on $S^{\uparrow}=\tilde{\Gamma}\backslash\mathbb{R}\times\mathbb{H}$ is linearly bounded by a monotone function $\mu(n)$, then the corresponding values of the twist character $\chi$ are incompatible with Diophantine approximation. Hence, conversely, a parameter criterion based on the given twist character can be established. The purpose of this paper is to examine the existence of Weyl's law based on the twist character $\chi$.
 
 \subsection{The group structure}
-We aim to analyze the space $\tilde{\Gamma}\backslash \mathbb{H}\times \mathbb{R}$, where $\tilde{\Gamma}$ is defined as follows: 
-\begin{equation}\label{biggergamma}
-    \tilde{\Gamma}=\{(\gamma, y): \gamma\in \Gamma, y\in \phi(\gamma)\}.
-\end{equation}
-The definition of $\tilde{\Gamma}$ involves a Fuchsian group $\Gamma$. The primary focus, in the definition of $\tilde{\Gamma}$, is the group homeomorphism $\phi$, which is critical to understand. Our objective in this section is to analyze the conditions under which Weyl's law can be established with $\phi$. Furthermore, we endeavor to understand the group structure of $\tilde{\Gamma}$ and the fundamental properties of $\phi$ as essential preparation for future sections.
+This section aims to analyze the space $S^{\uparrow}$, where $\tilde{\Gamma}$ is defined as: \begin{equation}\label{biggergamma}
+\tilde{\Gamma}=\{(\gamma, y): \gamma\in \Gamma, y\in \phi(\gamma)\},
+\end{equation} where $\Gamma$ is a Fuchsian group and $\phi$ is a group homeomorphism from $\Gamma$ to $\RR/2\pi\ZZ$. Here, $\hat{\gamma}$ is an element of the set $\tilde{\Gamma}$, consisting of pairs of $\gamma$ and $y$, where $\gamma$ is an element of $\Gamma$ and $y$ is an element of $\phi(\gamma)$.
+In order to light the notation, we denote the pair $(z,t)\in \HH\times \RR $ as $\hat{z}$. And the primary focus, in the definition of $\tilde{\Gamma}$, is the group homeomorphism $\phi$, which is critical to understand. 
+\begin{center}
+    \begin{tikzcd}
+\phi: \Gamma \arrow[rr, "\text{traslation length}"] \arrow[rrd] &  & \mathbb{R} \arrow[d]      \\
+                                                                &  & \mathbb{R}/2\pi\mathbb{Z}
+\end{tikzcd}
+\end{center}
+
+\textcolor{red}{the image should be defined more carefully.}
 
 
-Before proceeding, let us review some facts concerning Fuchsian groups. Given $\Gamma$ as the Fuchsian group, which is a discrete subgroup of $\textbf{PSL}(2,\mathbb{R})$, 
-\begin{prop}
-    A subgroup of $\textbf{PSL}(2,\mathbb{R})$ acts properly discoutinuously on $\mathbb{H}$ if and only if $\Gamma$ is a Fuchsian group.
-\end{prop}
+Our objective in this section is to analyze the conditions under which Weyl's law can be established with $\phi$. Furthermore, we endeavor to understand the group structure of $\tilde{\Gamma}$ and the fundamental properties of $\phi$ as essential preparation for future sections.
+
+
+Before proceeding, let us review the definition of Fuchsian groups. Given $\Gamma$ as the Fuchsian group, which is a discrete subgroup of $\textbf{PSL}(2,\mathbb{R})$, 
 \begin{defi}
+    A subgroup of $\textbf{PSL}(2,\mathbb{R})$ acts properly discoutinuously on $\mathbb{H}$ if and only if $\Gamma$ is a Fuchsian group.
+\end{defi}
+Given the Fuchsian group $\Gamma$, we define the group operation of its lifted group $\Tilde{\Gamma}=\Gamma\rtimes \mathbb{R}$ as follows:
+\begin{equation*}
+    (\gamma_{1},y_{1})\cdot(\gamma_{2},y_{2})=(\gamma_{1}\gamma_{2},y_{1}+y_{2}-l(\gamma_{1}\gamma_{2}))
+\end{equation*}
+\begin{prop}
     A fundamental domain $\mathcal{F}\subset \mathbb{H}$ for Fuchsian group $\Gamma$ is a closed set such that 
     \begin{equation*}
         \Gamma\mathcal{F}:=\bigcup_{T\in\Gamma}T\mathcal{F}=\mathbb{H}
     \end{equation*}
+\end{prop}
+
+From the fundamental domain of $\Gamma$ on $\mathbb{H}$, the lift of fundamental domain is defined as 
+\begin{equation*}
+    \mathcal{F}^{*}=\{(\gamma\cdot z,t+\phi(\gamma))|\gamma\in \Gamma, z\in \mathcal{F}, t\in[0,\phi(\gamma)]\}
+\end{equation*}
+
+\begin{defi}
+    Let $\delta\in PSL(2, \mathbb{R})$ be a hyperbolic element. Then there exists unique $\gamma \in PSL(2, \mathbb{R})$ conjugate to $\delta$, with $\gamma(z)=e^{l}z$. We call this number $l=l(\delta)$ the traslation length of $\delta$.
 \end{defi}
+\begin{prop}
+    There is a one-to-one correspondence between the closed, oriented geodesics of the surface $S\cong \mathbb{H}/\Gamma$ and the conjugacy classes in $\Gamma$. The length of the geodesic corresponding to the conjugacy class $\{\delta\}$ is the traslation length.
+\end{prop}
+\begin{rmk}
+As $\mathbb{R}$ is an Abelian group, the one-to-one correspondence between particular kinds of geodesics and conjugacy classes still applies to $S^{\uparrow}$.
+\end{rmk}
 
+\subsection{Trace Formula}
+Before delving into the Selberg trace formula on $S^{\uparrow}$, it is necessary to define the Laplacian on $S^{\uparrow}$ and its corresponding eigenfunctions, which are denoted as follows:
+\begin{align*}
+     \mathcal{D}&=-y^{2}(\frac{\partial^{2}}{\partial x^{2}}+\frac{\partial^{2}}{\partial y^{2}}) + \frac{\partial^{2}}{\partial t^{2}}\\
+             \mathcal{D} F(\hat{z})&= (\lambda+\mu)F(\hat{z}),
+\end{align*}
+ in which $F(\hat{z})=f(z)g(t)$, $\Delta f(z)=\lambda f(z)$, and $\frac{\partial^{2}}{\partial t^{2}} g(t) = \mu g(t)$.
 
+Consider a function $G(\hat{z})\in L^{2}(S^{\uparrow})$. This function can be expanded in two ways: by using eigenfunctions of corresponding Laplacian or by using compact supported functions.  To expand $G(\hat{z})$ with a compact supported function, we choose a radially symmetric function. We define a radially symmetric function on $S^{\uparrow}$ as:
+\begin{equation*}
+    f(z)=\Phi[\frac{|z-z_{0}|}{\textbf{Im}(z)\textbf{Im}(z_{0})}]\cdot\Psi(|t-t_{0}|)
+\end{equation*}
+Then the function $G(\hat{z})$ can be written as 
+\begin{equation*}
+    G(\hat{z})=\sum_{\hat{\gamma}\in\Tilde{\Gamma}}\Phi[\frac{|\gamma\cdot z-z_{0}|}{\textbf{Im}(z)\textbf{Im}(z_{0})}]\cdot\Psi(|t+y -t_{0}|)
+\end{equation*}
 
+Alternatively, the function $G(\hat{z})$ can be expressed using the eigenfunctions of the Laplacian as follows: 
+\begin{align*}
+    G(\hat{z})&=\sum_{n=0}^{\infty} c_{n}F_{n}(\hat{z})\\
+                &= \sum_{n=0}^{\infty} c_{n}f_{n}(z)g_{n}(t)
+\end{align*}
+
+Combining this two ways of expansion of the same function, the coefficients $c_{n}$ is 
+\begin{align*}
+    c_{n}&=\int_{\RR}\int_{\HH}\Phi[\frac{|\gamma\cdot z-z_{0}|}{\textbf{Im}(z)\textbf{Im}(z_{0})}]\cdot\Psi(|t+y -t_{0}|)F_{n}(\hat{z})\dd \mu(z)\dd t\\
+    &=\int_{\RR}\Psi(|t-t_{0}|)g(t)\dd t\cdot \int_{\HH} \Phi[\frac{|\gamma\cdot z-z_{0}|}{\textbf{Im}(z)\textbf{Im}(z_{0})}] f(z)\dd \mu(z),
+\end{align*}
+in this integral, the value of function $\Phi$ only depends on the hyperbolic distance from $z$ to the base point $z_{0}$. 
+
+\begin{lem}
+    
+\end{lem}
+Then we can conclude that 
+\begin{equation*}
+    c_{n}=H(\lambda)W(\mu)f(z_{0})g(t_{0})
+\end{equation*}
+
+After substituting the formula for the coefficient into the expansion of function $G(\hat{z})$, the resulting expression is obtained as following:
+\begin{equation*}
+G(\hat{z})=\sum_{n=0}^{\infty}c_{n}
+\end{equation*}
 \subsection{statement}
 \begin{prop}
-Let $N_{\Delta_{M}}$ be the number of eigenvalues, counted with multiplicity, of the Laplacian $\Delta$ of $M$ less than $\lambda$.   
+Let $N_{\mathcal{D}}$ be the number of eigenvalues, counted with multiplicity, of the Laplacian $\mathcal{D}$ of $M$ less than $\lambda$.   
 \end{prop}
 
 \section{Ergodic point of view}
 
-\begin{thm}\label{geodesictoconjugacy}
-   The geometric interpretation of the trace formula shows a one-to-one correspondence between the closed and oriented geodesics of the surface $S=\Gamma\backslash \mathbb{H}$ and the conjugacy classes within $\Gamma$. To be more precise, the length of any geodesic correlates to the translation length of its corresponding conjugacy class ${T}$. 
-\end{thm}
+\textcolor{red}{We know that the geodesic flow has }
 
-The significance of geodesic flow on modular surfaces can be directly seen through Theorem \ref{geodesictoconjugacy}. Considering Wely's law as discussed above, the spectrum side is illy exploded. So it's reasonable to expect that the geodesic flow on the space $\Tilde{\Gamma}\backslash \mathbb{H}\times \mathbb{R}$.
-
-\subsection{Review of dynamical system and ergodic theory}
-
-\begin{defi}
-    Given a measurable space $(X,\mathcal{A},\mu)$, there is a transformation $T$ on the space $X$, the orbit of $T$ is $\{T^{n}x|n\in\mathbb{N}_{\geq0}\}$.
-\end{defi}
 
 \newpage
 \bibliographystyle{plain}
